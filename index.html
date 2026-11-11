@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Malak ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ font-family:Tahoma,Arial,sans-serif;
+ color:white;text-align:center;
+ background:radial-gradient(circle at top,#633b88,#211333 65%,#100a20);
+}
+.stars{position:fixed;inset:0;pointer-events:none}
+.star{
+ position:absolute;color:white;
+ animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{to{opacity:.2;transform:scale(.5)}}
+.heart{
+ position:fixed;bottom:-40px;
+ animation:rise linear forwards;
+ pointer-events:none;z-index:3;
+}
+@keyframes rise{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+.container{
+ position:relative;z-index:2;
+ width:90%;max-width:440px;
+ margin:55px auto;padding:30px 20px;
+ border:1px solid #ffffff45;
+ border-radius:30px;
+ background:#ffffff13;
+ backdrop-filter:blur(15px);
+ box-shadow:0 0 45px #ed72c044;
+}
+h1{
+ color:#ffb4df;
+ font-size:37px;
+ text-shadow:0 0 20px #ff4da6;
+}
+h2{color:#ffd2e9}
+p{line-height:2;font-size:17px}
+button{
+ border:0;border-radius:30px;
+ padding:14px 22px;margin:9px;
+ color:white;font-size:16px;
+ background:linear-gradient(90deg,#ff4d9d,#a65bff);
+ box-shadow:0 0 20px #ff4d9d66;
+ cursor:pointer;
+}
+button:active{transform:scale(.95)}
+.hidden{display:none}
+.letter{
+ margin-top:20px;padding:20px;
+ border-radius:20px;
+ background:#ffffff19;
+ border:1px solid #ffb4df88;
+ animation:show 1s ease;
+}
+@keyframes show{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.big{font-size:45px}
+.small{font-size:13px;color:#e9c8ed}
+.glow{animation:glow 2s infinite alternate}
+@keyframes glow{
+ to{text-shadow:0 0 25px #ff4d9d}
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+ <div class="big glow">💗</div>
+ <h1>Happy 11:11</h1>
+ <h2>For My Princess Malak 👑</h2>
+
+ <p>
+   مش عارف أبدأ منين، بس عارف إن في شخص
+   وجوده لوحده بيخلّي الدنيا أحلى...
+   والشخص ده إنتِ يا ملك ❤️
+ </p>
+
+ <div class="big">🌙✨</div>
+
+ <p>عندي ليكي مفاجأة صغيرة...</p>
+ <button onclick="openLetter()">افتحي جوابك يا ملك 💌</button>
+
+ <div id="letter" class="letter hidden">
+  <h2>إلى ملك.. حبيبتي ❤️</h2>
+  <p>
+   عايزك تعرفي إنك مش مجرد شخص بحبه،
+   إنتِ الشخص اللي وجوده بيفرق في يومي،
+   واللي رسالة منه ممكن تغيّر مزاجي كله.
+   <br><br>
+   في 11/11 الناس بتتمنى أمنيات،
+   وأنا أمنيتي إنك تفضلي معايا،
+   وإن ضحكتك متغيبش عني أبداً.
+   <br><br>
+   يمكن مش بعرف أعبّر كل يوم،
+   بس والله مكانتك عندي أكبر من أي كلام.
+   <br><br>
+   بحب تفاصيلك، ضحكتك، كلامك،
+   وحتى الحاجات الصغيرة اللي بتعمليها من غير ما تاخدي بالك.
+   <br><br>
+   إنتِ حتة حلوة من دنيتي،
+   ونفسي أفضل أشوفك مبسوطة دايماً.
+   <br><br>
+   <b>Happy 11:11, My Malak ❤️</b>
+  </p>
+  <div class="big">💍❤️♾️</div>
+ </div>
+
+ <button onclick="surprise()">وفي مفاجأة تانية 🥹</button>
+
+ <div id="surprise" class="letter hidden">
+  <h2>عارفة إيه؟ ❤️</h2>
+  <p>
+   لو رجع بيا الزمن ألف مرة،
+   هختارك إنتِ ألف ومرة كمان.
+   <br>
+   مش عشان إنتِ كاملة،
+   لكن عشان إنتِ بالنسبالي مختلفة عن الكل.
+   <br><br>
+   بحبك يا ملك 🫶🏻
+  </p>
+ </div>
+
+ <p class="small">Made with love, just for Malak ❤️</p>
+ <p class="small">11 • 11 • Forever ♾️</p>
+</div>
+
+<script>
+const stars=document.getElementById("stars");
+
+for(let i=0;i<65;i++){
+ let s=document.createElement("span");
+ s.className="star";
+ s.innerHTML="✦";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.animationDelay=Math.random()*3+"s";
+ stars.appendChild(s);
+}
+
+function openLetter(){
+ document.getElementById("letter").classList.remove("hidden");
+}
+
+function surprise(){
+ document.getElementById("surprise").classList.remove("hidden");
+ for(let i=0;i<35;i++)setTimeout(createHeart,i*80);
+}
+
+function createHeart(){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML=["❤️","💗","💕","💖","✨"][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(20+Math.random()*25)+"px";
+ h.style.animationDuration=(3+Math.random()*4)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),7000);
+}
+setInterval(createHeart,600);
+</script>
+</body>
+</html>
